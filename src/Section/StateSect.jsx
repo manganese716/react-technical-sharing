@@ -35,7 +35,7 @@ export const StateSect = () => {
   `;
 
   const reactP2 = `const App = () => {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = useState(0);
 
   const handleClick = () => {
     setCount(count + 1);
@@ -48,7 +48,7 @@ export const StateSect = () => {
   `;
 
   const reactP3 = `const App = () => {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = useState(0);
 
   const handleClick = () => {
     setCount((prevCount) => prevCount + 1);
