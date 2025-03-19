@@ -43,7 +43,8 @@ export const PropsSect = () => {
   return (
     <>
       <Box sx={{ paddingY: "20px" }}>
-        <Box sx={{ fontSize: "20px" }}>Props</Box>
+        <Box sx={{ fontSize: "30px", color: "#90CAF9" }}>Props</Box>
+
         <CodeCompare reactCode={reactP1} vueCode={vueP1} />
 
         <Box>PrintText.jsx</Box>

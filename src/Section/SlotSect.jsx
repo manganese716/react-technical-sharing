@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { CodeCompare } from "../CodeCompare";
+import { Header } from "../TestComponent";
 const reactP1 = `import MyComponent from ...
 
 const App = () => {

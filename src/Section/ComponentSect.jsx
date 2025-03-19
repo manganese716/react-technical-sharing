@@ -37,7 +37,8 @@ export const ComponentSect = () => {
   return (
     <>
       <Box sx={{ paddingY: "20px" }}>
-        <Box sx={{ fontSize: "20px" }}>Component</Box>
+        <Box sx={{ fontSize: "30px", color: "#90CAF9" }}>Component</Box>
+
         <CodeCompare reactCode={reactP1} vueCode={vueP1} />
 
         <Box>HelloWorld.jsx</Box>

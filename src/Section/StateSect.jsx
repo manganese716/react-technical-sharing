@@ -64,9 +64,7 @@ export const StateSect = () => {
   const [cat, setCat] = useState({ name: "貓咪", age: 0 });
 
   const updateAge = () => {
-    setUser((prev) => {
-      return { ...prev, age: 1 };
-    });
+    setCat(() => {{ age: 1 });
   };
 
   return (
@@ -81,9 +79,11 @@ export const StateSect = () => {
 
   const reactP5 = `const App = () => {
   const [cat, setCat] = useState({ name: "貓咪", age: 0 });
-
+  
   const updateAge = () => {
-    setCat(() => {{ age: 1 });
+    setCat((prev) => {
+      return { ...prev, age: 1 };
+    });
   };
 
   return (
@@ -228,7 +228,7 @@ export const StateSect = () => {
           <Box sx={{ fontSize: "30px", color: "#90CAF9" }}>
             state儲存Object並更新(正確範例)
           </Box>
-          <Code reactCode={reactP4} />
+          <Code reactCode={reactP5} />
           <Box>範例</Box>
           <Box>
             <Box>名字：{cat2?.name}</Box>

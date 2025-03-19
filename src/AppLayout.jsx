@@ -40,12 +40,14 @@ export const AppLayout = () => {
                 margin: "0",
                 padding: "0",
                 color: "white",
-                fontSize: "5px",
               }}
               key={item.id}
             >
               <ListItemButton onClick={() => navigate(item.path)}>
-                <ListItemText primary={item.text} />
+                <ListItemText
+                  primary={item.text}
+                  sx={{ "& .MuiTypography-root": { fontSize: "18px" } }}
+                />
               </ListItemButton>
             </ListItem>
           ))}

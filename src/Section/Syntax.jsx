@@ -34,14 +34,15 @@ export const Syntax = () => {
   return (
     <>
       <Box sx={{ borderBottom: "1px solid #f5f5f5", paddingY: "20px" }}>
-        <Box sx={{ fontSize: "20px" }}>語法</Box>
+        <Box sx={{ fontSize: "30px", color: "#90CAF9" }}>語法</Box>
         <CodeCompare reactCode={reactP1} vueCode={vueP1} />
         <Box sx={{ marginBottom: "20px" }}>範例</Box>
         <div className="App">Hello World</div>
       </Box>
 
       <Box sx={{ borderBottom: "1px solid #f5f5f5", paddingY: "20px" }}>
-        <Box sx={{ fontSize: "20px" }}>結合 JS</Box>
+        <Box sx={{ fontSize: "30px", color: "#90CAF9" }}>結合 JS</Box>
+
         <CodeCompare reactCode={reactP2} vueCode={vueP2} />
       </Box>
     </>

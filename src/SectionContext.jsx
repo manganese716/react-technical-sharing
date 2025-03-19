@@ -5,6 +5,9 @@ import { ComponentSect } from "./Section/ComponentSect";
 import { PropsSect } from "./Section/PropsSect";
 import { SlotSect } from "./Section/SlotSect";
 import { StateSect } from "./Section/StateSect";
+import { Rerender } from "./Section/Rerender";
+import { UEffect } from "./Section/LifeCycle";
+import { Context } from "./Section/Context";
 
 // 建立 Context
 const SectionContext = createContext(null);
@@ -22,7 +25,27 @@ const sectionData = [
   { id: "props", text: "Props", path: "props", component: <PropsSect /> },
   { id: "slot", text: "Slot", path: "slot", component: <SlotSect /> },
   { id: "state", text: "State", path: "state", component: <StateSect /> },
+  {
+    id: "rerender",
+    text: "Re-Render",
+    path: "rerender",
+    component: <Rerender />,
+  },
+  {
+    id: "useeffect",
+    text: "useEffect",
+    path: "useeffect",
+    component: <UEffect />,
+  },
+  {
+    id: "usecontext",
+    text: "useContext",
+    path: "usecontext",
+    component: <Context />,
+  },
 ];
+
+//問題 下面程式會造成畫面刷新幾次? 按鈕式20
 
 // Context Provider 組件
 export const SectionProvider = ({ children }) => {

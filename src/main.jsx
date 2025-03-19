@@ -6,11 +6,9 @@ import "./main.css";
 import { SectionProvider } from "./SectionContext.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <BrowserRouter>
-      <SectionProvider>
-        <App />
-      </SectionProvider>
-    </BrowserRouter>
-  </StrictMode>
+  <BrowserRouter>
+    <SectionProvider>
+      <App />
+    </SectionProvider>
+  </BrowserRouter>
 );
