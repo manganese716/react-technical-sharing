@@ -67,7 +67,6 @@ export const UEffect = () => {
 
   const [count, setCount] = useState(0);
   const effectCount = useRef(0);
-
   useEffect(() => {
     effectCount.current += 1;
   });

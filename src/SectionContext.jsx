@@ -8,6 +8,11 @@ import { StateSect } from "./Section/StateSect";
 import { Rerender } from "./Section/Rerender";
 import { UEffect } from "./Section/LifeCycle";
 import { Context } from "./Section/Context";
+import { Ref } from "./Section/Ref";
+import { Reducer } from "./Section/Reducer";
+import TestContext from "./Section/TestContext";
+import ReDux from "./Section/ReDux";
+import { Tailwind } from "./Section/Tailwind";
 
 // 建立 Context
 const SectionContext = createContext(null);
@@ -42,6 +47,36 @@ const sectionData = [
     text: "useContext",
     path: "usecontext",
     component: <Context />,
+  },
+  {
+    id: "useref",
+    text: "useRef",
+    path: "useref",
+    component: <Ref />,
+  },
+  {
+    id: "usereducer",
+    text: "useReducer",
+    path: "usereducer",
+    component: <Reducer />,
+  },
+  {
+    id: "redux",
+    text: "Redux",
+    path: "redux",
+    component: <ReDux />,
+  },
+  {
+    id: "textcontext",
+    text: "TestContext",
+    path: "textcontext",
+    component: <TestContext />,
+  },
+  {
+    id: "tailwind",
+    text: "TailWind",
+    path: "tailwind",
+    component: <Tailwind />,
   },
 ];
 

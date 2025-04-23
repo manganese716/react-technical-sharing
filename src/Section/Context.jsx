@@ -1,6 +1,8 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { Code } from "../Code";
 import { createContext, memo, useContext, useRef, useState } from "react";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const CountContext = createContext(0);
 
@@ -134,6 +136,69 @@ function GrandChild() {
           <Box
             sx={{ display: "flex", flexDirection: "column", rowGap: "20px" }}
           >
+            <Box sx={{ fontSize: "30px" }}>Context 是什麼?</Box>
+            <Typography sx={{ marginBottom: "20px" }}>
+              在 Vue 中可以用 provide/inject 來跨元件傳遞資料，不用一層層 props
+              傳遞。 <br />
+              React 中的對應概念是 useContext。
+            </Typography>
+
+            <Box sx={{ fontSize: "30px" }}>context語法</Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                rowGap: "40px",
+                marginBottom: "80px",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  rowGap: "20px",
+                }}
+              >
+                <Typography>1. 建立 Context</Typography>
+                <Box sx={{ border: "1px solid #f5f5f5" }}>
+                  <SyntaxHighlighter language="javascript" style={a11yDark}>
+                    {`const MyContext = createContext(預設值);`}
+                  </SyntaxHighlighter>
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  rowGap: "20px",
+                }}
+              >
+                <Typography>2. 用 Provider 包住要共享資料的元件範圍</Typography>
+                <Box sx={{ border: "1px solid #f5f5f5" }}>
+                  <SyntaxHighlighter language="javascript" style={a11yDark}>
+                    {`<MyContext.Provider value={共享的資料}>
+  <SomeComponent />
+</MyContext.Provider>`}
+                  </SyntaxHighlighter>
+                </Box>
+              </Box>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  rowGap: "20px",
+                }}
+              >
+                <Typography>3. 在子元件中用 useContext 取得資料</Typography>
+                <Box sx={{ border: "1px solid #f5f5f5" }}>
+                  <SyntaxHighlighter language="javascript" style={a11yDark}>
+                    {`const value = useContext(MyContext);`}
+                  </SyntaxHighlighter>
+                </Box>
+              </Box>
+            </Box>
+
             <Box sx={{ fontSize: "30px" }}>context獲取state</Box>
             <Code reactCode={react1} />
             <Box sx={{ textAlign: "center" }}>
@@ -144,7 +209,7 @@ function GrandChild() {
               </CountContext.Provider>
             </Box>
 
-            <Box sx={{ fontSize: "30px" }}>中間的組建是否會被渲染?</Box>
+            {/* <Box sx={{ fontSize: "30px" }}>中間的組建是否會被渲染?</Box>
             <Code reactCode={react2} />
             <Box sx={{ textAlign: "center" }}>
               <CountContext.Provider value={count}>
@@ -152,7 +217,7 @@ function GrandChild() {
                 <Button onClick={() => setCount(count + 1)}>增加計數</Button>
                 <Button onClick={() => setCount(count - 1)}>減少計數</Button>
               </CountContext.Provider>
-            </Box>
+            </Box> */}
 
             <Box sx={{ fontSize: "30px" }}>把context寫在其他檔案</Box>
             <Code reactCode={react3} />
